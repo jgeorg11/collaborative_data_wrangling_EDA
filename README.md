@@ -1,23 +1,40 @@
-# Project Title
-## Homework #2: Collaborative Data Wrangling & EDA
-### DSE 511 – Fall 2026
+# Project Title: Inside Airbnb Nashville, Tennessee Data Analysis
 
 ## Dataset Information
-Source: [Insert dataset name + link (e.g., Our World in Data)]
+Source: [Inside Airbnb](https://insideairbnb.com/get-the-data/).
 
-Date accessed: [Insert date]
+Date accessed: 02SEP2026
 
-Description: Briefly describe the dataset (variables, units, scope).
+Description: 
+The Inside Airbnb Nashville, Tennessee, dataset contains publicly collected information about short-term rental activity in Nashville, Tennessee. 
 
-Size: [e.g., 2.3 MB, 10,000 rows]
+File Name: listings.csv
+File Shape: (10242 rows, 90 columns)
+File Size: 32.3 MB
 
-License (if known): [e.g., CC-BY]
+File Name: reviews.csv
+File Shape: (838603 rows, 6 columns)
+File Size: 233.4 MB
+
+Cleaned and Combined Dataset Shape:
+File Name: listings_with_review_summary.csv
+File Shape: (10242 rows, 77 columns)
+File Size: 32.7 MB
+
+License: [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/)
 
 ## Methods
-### Data Cleaning (Partner A)
-List specific steps (e.g., handled missing values, renamed variables, filtered rows).
+### Data Cleaning (John George)
+steps taken to clean the data:
+- enumerate the csv files and read them into pandas dataframes
+- list unique IDs in the listings and reviews datasets
+- identify and remove duplicate and missing values
+- clean and standardize text, date, money, boolean, and percentage columns
+- aggregate reviews by listing ID and merge with listings dataset
 
-Tools/libraries used (e.g., pandas, numpy).
+tools used:
+- pandas
+- numpy
 
 ### Exploratory Data Analysis (Partner B)
 Summary statistics (e.g., mean, median, correlation).
