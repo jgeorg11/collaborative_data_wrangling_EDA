@@ -5,21 +5,36 @@ Source: [Inside Airbnb](https://insideairbnb.com/get-the-data/).
 
 Date accessed: 02SEP2026
 
-Description: 
-The Inside Airbnb Nashville, Tennessee, dataset contains publicly collected information about short-term rental activity in Nashville, Tennessee. 
+Description:
+The Inside Airbnb Nashville, Tennessee, dataset contains publicly collected information about short-term rental activity in Nashville, Tennessee.
+
+---
 
 File Name: listings.csv
+
 File Shape: (10242 rows, 90 columns)
+
 File Size: 32.3 MB
 
+---
+
 File Name: reviews.csv
+
 File Shape: (838603 rows, 6 columns)
+
 File Size: 233.4 MB
 
+---
+
 Cleaned and Combined Dataset Shape:
+
 File Name: listings_with_review_summary.csv
+
 File Shape: (10242 rows, 77 columns)
+
 File Size: 32.7 MB
+
+---
 
 License: [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/)
 
@@ -55,13 +70,19 @@ tools used:
 Overall, price has a strong, positive correlation with number of bedrooms and bathrooms. We also found that the review score rating was the most correlated with the value and accuracy review scores, suggesting that customers may value these characteristics more when rating a listing. Listings with more than 10 reviews were generally likely to have ratings above 4 stars, while listings with fewer reviews showed much more variation in their ratings. ***John insert sentence about low rating = less bookings = less reviews*** We also examined the relationship between review ratings and the number of days a listing was occupied over the previous 365 days. Higher-rated listings tended to have more occupied days than listings with ratings of 1–2 stars. Finally, the amenities listed for a property appeared to have a negligible relationship with its overall review rating. 
 
 ### Visualizations
+- Scatterplot of review score rating vs. number of reviews
 
-Optional: brief reflection on what was interesting or unexpected.
+![Scatterplot of review score rating vs. number of reviews](images/reviewscatter.png)
+
+- Heatmap of correlation between review score rating and other review scores
+
+![Heatmap of review score correlations](images/reviewHeatmap.png)
 
 ## Collaboration Notes
-### Partner A contributions: 
+### Partner A contributions:
 - data cleaning
 - repo setup
+- merge conflict resolution
 
 ### Partner B contributions:
 - EDA
@@ -70,15 +91,32 @@ Optional: brief reflection on what was interesting or unexpected.
 
 ### Both:
 - documentation
-- merge conflict resolution
 
 ## Reproducibility Instructions
-open notebooks/DataWranglingEDA.ipynb to run 
-Data is imported as a csv using pandas which is shown and commented on in the first code block in the notebook. All needed libraries imported in first code block. IF errors, then may need to pip install these libraries. These libraries are also listed previously in the README above. 
+Run commands from the repository root so the notebook paths resolve consistently after the notebooks moved into `notebooks/`.
 
-Dependencies (e.g., requirements.txt or conda environment).
+```bash
+python -m pip install pandas numpy matplotlib seaborn jupyter
+jupyter notebook notebooks/data_cleaning.ipynb
+jupyter notebook notebooks/DataWranglingEDA.ipynb
+```
 
-> Special instructions (if any).
+Run the notebooks in this order:
+1. `notebooks/data_cleaning.ipynb` reads `data/listings.csv` and `data/reviews.csv`, cleans and merges them, and writes `data/listings_with_review_summary.csv`.
+2. `notebooks/DataWranglingEDA.ipynb` reads `data/listings_with_review_summary.csv` and produces the exploratory statistics and plots.
+
+Required input files:
+- `data/listings.csv`
+- `data/reviews.csv`
+
+Python dependencies:
+- pandas
+- numpy
+- matplotlib
+- seaborn
+- jupyter
 
 ## Merge Conflict Reflection (Required)
-Briefly describe the merge conflict you created and how you resolved it.
+I created conflicted commits to this README using a second, patching branch. To resolve the conflict, I used GitHub.com's built-in merge deconfliction tool and chose to accept the current change instead of the incoming change.
+
+![Merge conflict resolution in GitHub](images/MC.png)
