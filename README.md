@@ -51,7 +51,6 @@ tools used:
 - pandas
 - numpy
 
-
 ### Exploratory Data Analysis (Sydney Wilson)
 #### Made the insights given using the following summary statistics and visualizations: 
 
@@ -87,7 +86,7 @@ Overall, price has a strong, positive correlation with number of bedrooms and ba
 
 ### Partner B contributions:
 - EDA
-- visualization
+- visualizations
 - statistics
 
 ### Both:
